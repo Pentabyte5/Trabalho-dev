@@ -10,7 +10,7 @@ namespace Petshop5.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Clientes()
         {
             var clientes = Simulacao.ClientesList;
             return View();

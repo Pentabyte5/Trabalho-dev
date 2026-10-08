@@ -8,6 +8,7 @@
         public string Servico { get; set; }
         public string Horario { get; set; }
         public string Status { get; set; }
+        public string teste { get; set; }
 
         public Agendamento(int id, string cliente, string pet, string servico, string horario)
         {

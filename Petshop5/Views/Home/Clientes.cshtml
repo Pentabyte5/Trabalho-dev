@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Petshop5.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes e Pets";
+}
+
+<div class="container mt-4">
+    <h2>Lista de Clientes e Pets Cadastrados</h2>
+    <table class="table table-striped mt-3">
+        <thead>
+            <tr>
+                <th text="Nome do Cliente">Cliente</th>
+                <th text="Telefone de Contato">Telefone</th>
+                <th text="Pets do Cliente">Pets / Raça / Porte</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+                <tr>
+                    <td>@cliente.NomeCliente</td>
+                    <td>@cliente.Telefone</td>
+                    <td>
+                        <ul>
+                            @foreach (var pet in cliente.Pets)
+                            {
+                                <li><strong>@pet.NomePet</strong> (@pet.Raca - Porte: @pet.Porte)</li>
+                            }
+                        </ul>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Home/Index" name="linkVoltarMenu" text="Voltar ao Menu Principal" class="btn btn-secondary">Voltar ao Menu</a>
+</div>
